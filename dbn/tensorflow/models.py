@@ -1,8 +1,12 @@
 import atexit
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+
 from abc import ABCMeta
 
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+
 from sklearn.base import ClassifierMixin, RegressorMixin
 
 from ..models import AbstractSupervisedDBN as BaseAbstractSupervisedDBN
