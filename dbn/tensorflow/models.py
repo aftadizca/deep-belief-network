@@ -152,7 +152,7 @@ class BinaryRBM(BaseBinaryRBM, BaseTensorFlowModel):
         self.compute_visible_units_op = self._activation_function_class(
             tf.matmul(self.hidden_units_placeholder, self.W) + self.b)
         self.random_uniform_values = tf.Variable(tf.random_uniform([self.batch_size, self.n_hidden_units]))
-        sample_hidden_units_op = tf.to_float(self.random_uniform_values < self.compute_hidden_units_op)
+        sample_hidden_units_op = tf.cast(self.random_uniform_values < self.compute_hidden_units_op)
         self.random_variables = [self.random_uniform_values]
 
         # Positive gradient
