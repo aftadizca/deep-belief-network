@@ -6,6 +6,7 @@ from abc import ABCMeta
 
 import numpy as np
 import tensorflow.compat.v1 as tf
+tf.disable_eager_execution()
 
 from sklearn.base import ClassifierMixin, RegressorMixin
 
